@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NextRole
 
-## Getting Started
+Land your next role with less guesswork.
 
-First, run the development server:
+## Stack
+
+- Next.js (App Router) + TypeScript
+- Tailwind CSS + shadcn/ui
+- Supabase Auth + Postgres + Storage
+- Vercel deployment target
+
+## Quick Start
 
 ```bash
+npm install
+cp .env.example .env.local
+# set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY in .env.local
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Week 1 Foundation (Completed)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- shadcn/ui initialized
+- Supabase browser/server client scaffolding
+- Middleware-based protected route guard
+- Auth entry pages (/sign-in, /sign-up)
+- Dashboard shell (/dashboard)
+- Structured logging helper
 
-## Learn More
+Detailed execution checklist:
 
-To learn more about Next.js, take a look at the following resources:
+- docs/week1-foundation-checklist.md
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Next Steps
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Add SQL migrations for tables/enums/indexes.
+2. Add RLS and Supabase storage policies.
+3. Implement real sign-in/sign-up/sign-out actions.
+4. Add auth + protected-route integration tests.
+5. Deploy to Vercel with environment variables.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
