@@ -7,16 +7,19 @@ const PROTECTED_PATHS = ["/dashboard"];
 const AUTH_PATHS = ["/sign-in", "/sign-up"];
 
 function isProtectedPath(pathname: string) {
+  console.log("[MIDDLEWARE] isProtectedPath path:", pathname);
   return PROTECTED_PATHS.some(
     (path) => pathname === path || pathname.startsWith(`${path}/`),
   );
 }
 
 function isAuthPath(pathname: string) {
+  console.log("[MIDDLEWARE] isAuthPath path:", pathname);
   return AUTH_PATHS.some((path) => pathname === path || pathname.startsWith(`${path}/`));
 }
 
 export async function updateSession(request: NextRequest) {
+  console.log("[MIDDLEWARE] updateSession path:", request.nextUrl.pathname);
   const response = NextResponse.next({ request });
   const { NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY } = getEnv();
 
