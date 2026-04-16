@@ -13,8 +13,8 @@ Land your next role with less guesswork.
 
 ```bash
 npm install
-cp .env.example .env.local
-# set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY in .env.local
+# ensure .env.local exists and set required variables
+# NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY
 npm run dev
 ```
 
